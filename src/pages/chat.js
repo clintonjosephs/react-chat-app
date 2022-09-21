@@ -18,8 +18,8 @@ const Chat = () => {
   return (
     <div>
       <ChatHead />
-      <ChatBody />
-      <ChatBox userId={userId} />
+      <ChatBody data={userId} />
+      <ChatBox id={userId} />
     </div>
   );
 };

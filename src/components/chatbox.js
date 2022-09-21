@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import { addMessage } from '../redux/chat/chat';
 import { setMessages } from '../db/manage';
 
-const ChatBox = ({ userId }) => {
+const ChatBox = ({ id }) => {
   const dispatch = useDispatch();
   const [message, setMessage] = useState('');
 
@@ -16,8 +17,9 @@ const ChatBox = ({ userId }) => {
     e.preventDefault();
     if (message.trim() !== '') {
       const data = {
+        messageId: uuidv4(),
         message,
-        userId,
+        id,
       };
 
       dispatch(addMessage(data));
@@ -42,7 +44,7 @@ const ChatBox = ({ userId }) => {
 };
 
 ChatBox.propTypes = {
-  userId: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default ChatBox;
