@@ -31,7 +31,7 @@ const Auth = () => {
     if (userName.trim() !== '' && userName.length >= 3) {
       dispatch(createUser(userData));
       setUsers(userData);
-      navigate('/chat');
+      navigate(`/chat/${userData.userId}`);
     } else {
       // message that data is not correct
     }

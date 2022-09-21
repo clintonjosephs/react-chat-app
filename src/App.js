@@ -6,7 +6,7 @@ import Chat from './pages/chat';
 const App = () => (
   <Routes>
     <Route path="/" element={<Auth />} />
-    <Route path="/chat" element={<Chat />} />
+    <Route path="/chat/:id" element={<Chat />} />
     <Route path="*" element={<Auth />} />
   </Routes>
 );

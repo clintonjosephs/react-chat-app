@@ -10,7 +10,6 @@ const LOGGED_IN = 'LOGGED_IN';
 // initial state
 const initialState = {
   users: initializeStorage().users,
-  currentUser: null,
   isLoggedIn: false,
 };
 
@@ -43,7 +42,7 @@ const usersReducer = (state = initialState, action) => {
   switch (type) {
     case CREATE_USER:
       return {
-        ...state, users: [...state.users, payload], currentUser: payload, isLoggedIn: true,
+        ...state, users: [...state.users, payload], isLoggedIn: true,
       };
     case FETCH_USER:
       return state.users.filter((user) => {

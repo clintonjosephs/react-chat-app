@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { addMessage } from '../redux/chat/chat';
 import { setMessages } from '../db/manage';
+import styles from '../styles/chat.module.css';
 
 const ChatBox = ({ id }) => {
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ const ChatBox = ({ id }) => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler} className={styles.messageForm}>
       <input
         type="text"
         name="name"
@@ -38,7 +39,7 @@ const ChatBox = ({ id }) => {
         value={message}
         onChange={changeHandler}
       />
-      <button type="submit">Send Chat</button>
+      <button type="submit">&gt;&gt;</button>
     </form>
   );
 };
