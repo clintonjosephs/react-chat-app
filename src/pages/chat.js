@@ -5,17 +5,21 @@ import ChatBox from '../components/chatbox';
 import ChatHead from '../components/chathead';
 
 const Chat = () => {
-  const { currentUser } = useSelector((state) => state.usersReducer);
+  const { currentUser, isLoggedIn } = useSelector(
+    (state) => state.usersReducer,
+  );
 
-  if (currentUser === null) {
+  if (currentUser === null || isLoggedIn === false) {
     window.location.href = '/';
   }
+
+  const { userId } = currentUser;
 
   return (
     <div>
       <ChatHead />
       <ChatBody />
-      <ChatBox />
+      <ChatBox userId={userId} />
     </div>
   );
 };
