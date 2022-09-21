@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.authForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+}
+
+.authForm input[type="text"] {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border: 1px solid var(--neutral-color-2);
+    border-radius: 5px;
+}
+
+.authForm button {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    font-weight: bold;
+    cursor: pointer;
+}

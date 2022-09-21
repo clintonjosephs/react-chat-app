@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { setUsers } from '../db/manage';
 import { createUser } from '../redux/user/user';
+import styles from '../styles/auth.module.css';
 
 const Auth = () => {
   const userInfo = () => ({
@@ -37,9 +38,9 @@ const Auth = () => {
   };
 
   return (
-    <>
-      <h3>Fill in your name to proceed</h3>
-      <form onSubmit={submitHandler}>
+    <div className={styles.container}>
+      <h3>Enter name to proceed</h3>
+      <form onSubmit={submitHandler} className={styles.authForm}>
         <input
           type="text"
           name="name"
@@ -47,9 +48,10 @@ const Auth = () => {
           required
           onChange={changeHandler}
         />
+        <br />
         <button type="submit">Join Chat</button>
       </form>
-    </>
+    </div>
   );
 };
 
