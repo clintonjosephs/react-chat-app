@@ -1,13 +1,6 @@
 import './App.css';
-import ChatBody from './components/chatbody';
-import ChatBox from './components/chatbox';
-import ChatHead from './components/chathead';
+import Auth from './pages/auth';
 
-const App = () => (
-  <div>
-    <ChatHead />
-    <ChatBody />
-    <ChatBox />
-  </div>
-);
+const App = () => <Auth />;
+
 export default App;
