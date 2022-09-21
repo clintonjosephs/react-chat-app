@@ -42,7 +42,9 @@ const usersReducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
     case CREATE_USER:
-      return { ...state, users: [...state.users, payload] };
+      return {
+        ...state, users: [...state.users, payload], currentUser: payload, isLoggedIn: true,
+      };
     case FETCH_USER:
       return state.users.filter((user) => {
         if (user.id === payload) {
