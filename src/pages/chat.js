@@ -13,7 +13,7 @@ const Chat = () => {
 
   const { id } = useParams();
 
-  if (isLoggedIn === false || id === '') {
+  if (isLoggedIn === false || id === null) {
     window.location.href = '/';
   }
 
