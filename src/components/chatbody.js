@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import ChatItem from './chatItem';
 import styles from '../styles/chat.module.css';
 
-const ChatBody = ({ data }) => {
+const ChatBody = ({ data, userName }) => {
   const { messages } = useSelector((state) => state.messageReducer);
 
   useEffect(() => {
@@ -19,6 +19,7 @@ const ChatBody = ({ data }) => {
           key={messageId}
           message={message}
           userId={id}
+          userName={userName}
           currentUserId={data}
         />
       ))}
@@ -28,6 +29,7 @@ const ChatBody = ({ data }) => {
 
 ChatBody.propTypes = {
   data: PropTypes.string.isRequired,
+  userName: PropTypes.string.isRequired,
 };
 
 export default ChatBody;

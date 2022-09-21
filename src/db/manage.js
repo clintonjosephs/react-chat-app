@@ -3,6 +3,10 @@ const dbInitial = {
   messages: [],
 };
 
+export const pageSize = 5;
+
+export const chunkData = (offset = 1, arr) => arr.slice((offset - 1) * pageSize, offset * pageSize);
+
 export const initializeStorage = () => {
   const data = localStorage.getItem('chat_db');
   if (data) {
