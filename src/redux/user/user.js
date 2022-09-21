@@ -1,3 +1,5 @@
+import { initializeStorage } from '../../db/manage';
+
 // transaction addresses
 const CREATE_USER = 'CREATE_USER';
 const FETCH_USER = 'FETCH_USER';
@@ -7,7 +9,7 @@ const LOGGED_IN = 'LOGGED_IN';
 
 // initial state
 const initialState = {
-  users: [],
+  users: initializeStorage().users,
   currentUser: null,
   isLoggedIn: false,
 };

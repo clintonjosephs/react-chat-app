@@ -1,10 +1,12 @@
+import { initializeStorage } from '../../db/manage';
+
 // addresses
 const ADD_MESSAGE = 'ADD_MESSAGE';
 const FETCH_MESSAGES = 'FETCH_MESSAGES';
 
 // inital state for messages
 const initialState = {
-  messages: [],
+  messages: initializeStorage().messages,
 };
 
 // syncronous actions
